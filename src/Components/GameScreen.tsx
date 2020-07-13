@@ -9,13 +9,13 @@ import SpinButton from "./gameComponents/SpinButton";
 import ThemeSelection from "./gameComponents/ThemeSelection";
 import TopBanner from "./layout/TopBanner";
 import Image from "../Interfaces/Image";
-import User from "../Interfaces/User";
+import { User } from "../Interfaces/User";
 import placeholderImage from "../images/game/question-mark.png";
 
 interface GameScreenProps {
   users: User[];
   user: User;
-  setUser: (user: any) => void;
+  setUser: (user: User) => void;
 }
 
 const GameScreen = ({ users, user, setUser }: GameScreenProps) => {

@@ -1,9 +1,9 @@
 import React from "react";
-import User from "../../Interfaces/User";
+import { User, defaultUser } from "../../Interfaces/User";
 
 interface TopBannerProps {
   user: User;
-  setUser: (user: any) => void;
+  setUser: (user: User) => void;
 }
 
 const TopBanner = ({ user, setUser }: TopBannerProps) => {
@@ -12,7 +12,7 @@ const TopBanner = ({ user, setUser }: TopBannerProps) => {
       <img src="./images/game/sloth-logo.png" alt="" />
       <div id="current-user">
         <div className="text">{user.username} | </div>
-        <button className="btn btn-danger" onClick={() => setUser({})}>
+        <button className="btn btn-danger" onClick={() => setUser(defaultUser)}>
           LOGOUT
         </button>
       </div>

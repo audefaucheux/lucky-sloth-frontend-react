@@ -1,5 +1,5 @@
 import axios from "axios";
-import User from "../Interfaces/User";
+import { User, NewUser } from "../Interfaces/User";
 
 const server = process.env.REACT_APP_SERVER;
 
@@ -10,7 +10,7 @@ export const getUsers = (): Promise<User[]> => {
   }).then((res) => res.data);
 };
 
-export const createUser = (data: User): Promise<User> => {
+export const createUser = (data: NewUser): Promise<User> => {
   return axios({
     method: "post",
     url: `${server}/users`,
