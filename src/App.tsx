@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getUsers, createUser } from "./Adapters/APIs";
-// import Header from "../components/layout/Header";
 import GameScreen from "./Components/GameScreen";
 import Login from "./Components/Login";
 import Footer from "./Components/layout/Footer";
