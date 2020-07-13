@@ -26,7 +26,9 @@ import butters from "../images/themes/south-park/butters.png";
 import cartman from "../images/themes/south-park/cartman.png";
 import jimmy from "../images/themes/south-park/Jimmy.png";
 
-export const slothImageCollection: any = {
+import Theme from "../Interfaces/Theme";
+
+export const slothImageCollection: Theme = {
   sloth: [brownSloth, greenSloth, redSloth],
   cat: [flyingCat, mexicanCat, scaredCat],
   duck: [cloudDuck, polkaDotsDuck, watermelonDuck],
