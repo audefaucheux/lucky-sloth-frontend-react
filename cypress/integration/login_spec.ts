@@ -1,4 +1,4 @@
-describe("Login", () => {
+describe.skip("Login", () => {
   beforeEach(() => {
     cy.server();
     cy.fixture("users.json").as("users");

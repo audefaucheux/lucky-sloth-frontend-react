@@ -5,7 +5,7 @@ describe("Game", () => {
     cy.route({ method: "GET", url: "/users", response: "@users" }).as(
       "getUsers"
     );
-    cy.visit("/");
+    cy.visit("http://localhost:3000");
     cy.wait("@getUsers");
     cy.login("Aude");
   });
