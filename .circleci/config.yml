@@ -13,11 +13,14 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+  e2e-test:
+    steps:
+      - start: npm start
+      - wait-on: "http://localhost:3000"
+      - run: cypress/run
 
 workflows:
   unit-test:
     jobs:
       - unit-test
-  e2e-test:
-    jobs:
-      - cypress/run
+      - e2e-test
