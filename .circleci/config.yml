@@ -20,7 +20,7 @@ jobs:
       - run: cypress/run
 
 workflows:
-  unit-test:
+  build-and-test:
     jobs:
       - unit-test
       - e2e-test
