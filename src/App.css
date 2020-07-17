@@ -61,7 +61,7 @@ select {
 #top-banner {
   display: flex;
   width: 100%;
-  background-color: lightseagreen;
+  background-color: #20b2aa;
   justify-content: space-between;
 }
 
