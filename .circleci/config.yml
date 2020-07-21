@@ -18,4 +18,4 @@ workflows:
     jobs:
       - build-and-test
       - cypress/run:
-          start: npm start & wait-on http://localhost:8080
+          start: npm start
