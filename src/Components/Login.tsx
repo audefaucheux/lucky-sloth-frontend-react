@@ -37,7 +37,7 @@ const Login = ({ users, findUser }: LoginProps) => {
           type="submit"
           value="PLAY"
           className="form-container-items btn btn-info"
-          disabled={users.length === 0}
+          disabled={!users || users.length === 0}
         />
       </form>
       <img
