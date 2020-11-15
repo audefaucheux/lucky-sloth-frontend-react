@@ -1,10 +1,10 @@
 export const defaultUser: User = {
-  id: 0,
+  _id: 0,
   username: "",
   credit: 0,
 };
 export interface User {
-  id: number;
+  _id: number;
   username: string;
   credit: number;
 }

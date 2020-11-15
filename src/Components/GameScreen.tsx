@@ -59,10 +59,10 @@ const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
         ...user,
         credit: user.credit + bet * 5,
       };
-      updateUser(userUpdate.id, userUpdate).then(setUser);
+      updateUser(userUpdate._id, userUpdate).then(setUser);
     } else {
       const userUpdate = { ...user, credit: user.credit - bet };
-      updateUser(userUpdate.id, userUpdate).then(setUser);
+      updateUser(userUpdate._id, userUpdate).then(setUser);
     }
   };
 
