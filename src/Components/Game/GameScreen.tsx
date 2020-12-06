@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { uniq } from "lodash";
-import { slothImageCollection } from "../Helpers/SlothImageCollection.data";
-import { updateUser } from "../Adapters/APIs";
-import BetOption from "./gameComponents/BetOption";
-import Leaderboard from "./gameComponents/Leaderboard";
-import SlotMachineImage from "./gameComponents/SlotMachineImage";
-import SpinButton from "./gameComponents/SpinButton";
-import ThemeSelection from "./gameComponents/ThemeSelection";
-import TopBanner from "./layout/TopBanner";
-import Image from "../Interfaces/Image";
-import { User } from "../Interfaces/User";
-import placeholderImage from "../images/game/question-mark.png";
+import imageCollection from "../../Helpers/ImageCollection";
+import { updateUser } from "../../Adapters/APIs";
+import BetOption from "./BetOption";
+import Leaderboard from "./Leaderboard";
+import SlotMachineImage from "./SlotMachineImage";
+import SpinButton from "./SpinButton";
+import ThemeSelection from "./ThemeSelection";
+import TopBanner from "../Layout/TopBanner";
+import Image from "../../Interfaces/Image";
+import { User } from "../../Interfaces/User";
+import placeholderImage from "../../images/game/question-mark.png";
 
 interface GameScreenProps {
   users: User[];
   user: User;
-  setUser: (user: User) => void;
+  setUser: (user?: User) => void;
 }
 
 const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
@@ -24,16 +24,17 @@ const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
     className: "",
   };
 
-  const [themeSelected, setThemeSelected] = useState<string>("sloth");
+  const [selectedTheme, setSelectedTheme] = useState<string>("sloth");
   const [bet, setBet] = useState<number>(10);
   const [image1, setImage1] = useState<Image>(imagePlaceholder);
   const [image2, setImage2] = useState<Image>(imagePlaceholder);
   const [image3, setImage3] = useState<Image>(imagePlaceholder);
 
-  const renderSpinningImage = (
-    imageSetter: (image: Image) => void,
-    placeholder: string
-  ) => imageSetter({ src: placeholder, className: "animated infinite shake" });
+  const setSpinningPlaceholder = (imageSetter: (image: Image) => void) =>
+    imageSetter({
+      src: placeholderImage,
+      className: "animated infinite shake",
+    });
 
   const getRandomNumber = (): number => Math.floor(Math.random() * 3);
 
@@ -43,13 +44,9 @@ const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
     getRandomNumber(),
   ];
 
-  const renderImage = (
-    index: number,
-    imageSetter: (image: Image) => void,
-    time: number
-  ) => {
-    const imageUrl: string = slothImageCollection[themeSelected][index];
-    setTimeout(() => imageSetter({ src: imageUrl, className: "" }), time);
+  const renderImage = (index: number, imageSetter: (image: Image) => void) => {
+    const imageUrl: string = imageCollection[selectedTheme][index];
+    imageSetter({ src: imageUrl, className: "" });
   };
 
   const getResult = (randomNumberArray: number[]) => {
@@ -67,15 +64,15 @@ const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
   };
 
   const handleSpin = () => {
-    renderSpinningImage(setImage1, placeholderImage);
-    renderSpinningImage(setImage2, placeholderImage);
-    renderSpinningImage(setImage3, placeholderImage);
+    setSpinningPlaceholder(setImage1);
+    setSpinningPlaceholder(setImage2);
+    setSpinningPlaceholder(setImage3);
 
     const randomNumberArray: number[] = spinResults();
 
-    renderImage(randomNumberArray[0], setImage1, 1000);
-    renderImage(randomNumberArray[1], setImage2, 1400);
-    renderImage(randomNumberArray[2], setImage3, 1900);
+    setTimeout(() => renderImage(randomNumberArray[0], setImage1), 1000);
+    setTimeout(() => renderImage(randomNumberArray[1], setImage2), 1400);
+    setTimeout(() => renderImage(randomNumberArray[2], setImage3), 1900);
     setTimeout(() => getResult(randomNumberArray), 2000);
   };
 
@@ -91,7 +88,7 @@ const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
         <span className="sea-green"> £{user.credit}</span>
       </h1>
       <BetOption {...{ bet, setBet, user }} />
-      <ThemeSelection {...{ themeSelected, setThemeSelected }} />
+      <ThemeSelection {...{ selectedTheme, setSelectedTheme }} />
       <div id="slot-machine">
         <div id="slot-image-container">
           <SlotMachineImage image={image1} id={1} />

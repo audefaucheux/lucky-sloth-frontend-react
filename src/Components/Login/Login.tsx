@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { User } from "../Interfaces/User";
+import { User } from "../../Interfaces/User";
 
 interface LoginProps {
   users: User[];
@@ -17,6 +17,30 @@ const Login = ({ users, findUser }: LoginProps) => {
     findUser(username);
   };
 
+  const loadingButton = () => (
+    <button
+      className="form-container-items btn btn-info"
+      type="button"
+      disabled
+    >
+      <span
+        className="spinner-border spinner-border-sm"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      <span className=""> Loading...</span>
+    </button>
+  );
+
+  const playButton = () => (
+    <input
+      type="submit"
+      value="PLAY"
+      className="form-container-items btn btn-info"
+      disabled={!users || users.length === 0}
+    />
+  );
+
   return (
     <div id="login-content" className="center">
       <h1 className="text-center sea-green">Welcome to the Lucky Sloth!</h1>
@@ -33,12 +57,7 @@ const Login = ({ users, findUser }: LoginProps) => {
           onChange={handleUsersnameChange}
           required
         />
-        <input
-          type="submit"
-          value="PLAY"
-          className="form-container-items btn btn-info"
-          disabled={!users || users.length === 0}
-        />
+        {!users || users.length === 0 ? loadingButton() : playButton()}
       </form>
       <img
         src="https://media3.giphy.com/media/BCtjVLKRoFVza/source.gif"

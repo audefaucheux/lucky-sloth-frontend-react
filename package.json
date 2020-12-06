@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^6.0.1"
+    "cypress": "^6.0.1",
+    "husky": "^4.3.4"
   }
 }
