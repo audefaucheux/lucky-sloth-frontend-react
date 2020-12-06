@@ -25,11 +25,6 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run cypress:run"
-    }
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
