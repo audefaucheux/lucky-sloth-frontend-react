@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { uniq } from "lodash";
-import { slothImageCollection } from "../../Helpers/SlothImageCollection.data";
+import imageCollection from "../../Helpers/ImageCollection";
 import { updateUser } from "../../Adapters/APIs";
 import BetOption from "./BetOption";
 import Leaderboard from "./Leaderboard";
@@ -45,7 +45,7 @@ const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
   ];
 
   const renderImage = (index: number, imageSetter: (image: Image) => void) => {
-    const imageUrl: string = slothImageCollection[selectedTheme][index];
+    const imageUrl: string = imageCollection[selectedTheme][index];
     imageSetter({ src: imageUrl, className: "" });
   };
 

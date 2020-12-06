@@ -28,7 +28,7 @@ import jimmy from "../images/themes/south-park/Jimmy.png";
 
 import Theme from "../Interfaces/Theme";
 
-export const slothImageCollection: Theme = {
+const imageCollection: Theme = {
   sloth: [brownSloth, greenSloth, redSloth],
   cat: [flyingCat, mexicanCat, scaredCat],
   duck: [cloudDuck, polkaDotsDuck, watermelonDuck],
@@ -37,3 +37,5 @@ export const slothImageCollection: Theme = {
   keanu: [billAndTedKeanu, matrixKeanu, wicksKeanu],
   "south-park": [butters, cartman, jimmy],
 };
+
+export default imageCollection;
