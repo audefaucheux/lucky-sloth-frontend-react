@@ -24,7 +24,7 @@ export const createUser = (user: NewUser): Promise<User> => {
   }).then((res) => res.data.data.users);
 };
 
-export const updateUser = (id: number, user: User): Promise<User> => {
+export const updateUser = (id: string, user: User): Promise<User> => {
   console.log(user);
   return axios({
     method: "patch",
