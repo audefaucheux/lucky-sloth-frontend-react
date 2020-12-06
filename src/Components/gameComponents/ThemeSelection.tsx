@@ -8,18 +8,18 @@ import keanu from "../../images/themes/keanu/wicks-keanu.jpg";
 import southPark from "../../images/themes/south-park/cartman.png";
 
 interface ThemeSelectionProps {
-  themeSelected: string;
-  setThemeSelected: (theme: string) => void;
+  selectedTheme: string;
+  setSelectedTheme: (theme: string) => void;
 }
 
 const ThemeSelection = ({
-  setThemeSelected,
-  themeSelected,
+  setSelectedTheme,
+  selectedTheme,
 }: ThemeSelectionProps) => {
   const isThemeSelected = (theme: string) =>
-    theme === themeSelected ? "selected-theme" : "";
+    theme === selectedTheme ? "selected-theme" : "";
 
-  const handleThemeSelected = (theme: string): void => setThemeSelected(theme);
+  const handleThemeSelected = (theme: string): void => setSelectedTheme(theme);
 
   const renderTheme = (theme: string, image: string) => (
     <img
