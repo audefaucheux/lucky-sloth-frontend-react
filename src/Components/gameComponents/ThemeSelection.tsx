@@ -1,43 +1,44 @@
 import React from "react";
+import sloth from "../../images/themes/sloth/green-ninja.png";
+import cat from "../../images/themes/cat/mexican-cat.jpg";
+import duck from "../../images/themes/duck/watermelon-duck.jpg";
+import george from "../../images/themes/george/happy-george.jpg";
+import iceAge from "../../images/themes/ice-age/scrat.png";
+import keanu from "../../images/themes/keanu/wicks-keanu.jpg";
+import southPark from "../../images/themes/south-park/cartman.png";
 
 interface ThemeSelectionProps {
+  themeSelected: string;
   setThemeSelected: (theme: string) => void;
 }
 
-const ThemeSelection = ({ setThemeSelected }: ThemeSelectionProps) => {
-  const themes = [
-    "sloth",
-    "cat",
-    "duck",
-    "george",
-    "ice-age",
-    "keanu",
-    "south-park",
-  ];
+const ThemeSelection = ({
+  setThemeSelected,
+  themeSelected,
+}: ThemeSelectionProps) => {
+  const isThemeSelected = (theme: string) =>
+    theme === themeSelected ? "selected-theme" : "";
 
-  const formatTheme = (theme: string) => {
-    const themeWords = theme.split("-");
-    const capitalizeString = (word: string) =>
-      word.charAt(0).toUpperCase() + word.slice(1);
-    return themeWords.map((word) => capitalizeString(word)).join(" ");
-  };
-  const handleThemeSelected = (event: React.ChangeEvent<HTMLSelectElement>) =>
-    setThemeSelected(event.target.value);
+  const handleThemeSelected = (theme: string): void => setThemeSelected(theme);
+
+  const renderTheme = (theme: string, image: string) => (
+    <img
+      src={image}
+      alt={theme}
+      className={`${isThemeSelected(theme)} image-circle`}
+      onClick={() => handleThemeSelected(theme)}
+    />
+  );
 
   return (
     <>
-      <select
-        id="theme-dropdown"
-        className="form-container-items"
-        onChange={handleThemeSelected}
-        required
-      >
-        {themes.map((theme, index) => (
-          <option key={index} value={theme}>
-            {formatTheme(theme)}
-          </option>
-        ))}
-      </select>
+      {renderTheme("sloth", sloth)}
+      {renderTheme("cat", cat)}
+      {renderTheme("duck", duck)}
+      {renderTheme("george", george)}
+      {renderTheme("ice-age", iceAge)}
+      {renderTheme("keanu", keanu)}
+      {renderTheme("south-park", southPark)}
     </>
   );
 };

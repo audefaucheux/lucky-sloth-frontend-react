@@ -4,12 +4,12 @@ import GameScreen from "./Components/GameScreen";
 import Login from "./Components/Login";
 import Footer from "./Components/layout/Footer";
 import ErrorMessage from "./Constants/ErrorMessage";
-import { User, NewUser, defaultUser } from "./Interfaces/User";
+import { User, NewUser } from "./Interfaces/User";
 import "./App.css";
 
 const SlotMachineApp = () => {
   const [users, setUsers] = useState<User[]>([]);
-  const [user, setUser] = useState<User>(defaultUser);
+  const [user, setUser] = useState<User | undefined>();
   const [errorMessage, setErrorMessage] = useState<string>("");
 
   const findUser = (usernameInput: string) => {
@@ -35,7 +35,7 @@ const SlotMachineApp = () => {
     <>
       <div className="main">
         {errorMessage && console.log(errorMessage)}
-        {user.username === "" ? (
+        {!user ? (
           <Login {...{ users, findUser }} />
         ) : (
           <GameScreen {...{ users, user, setUser }} />
