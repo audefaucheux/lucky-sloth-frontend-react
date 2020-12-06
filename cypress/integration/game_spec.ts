@@ -1,10 +1,8 @@
 describe("Game", () => {
   beforeEach(() => {
-    cy.server();
-    cy.fixture("users.json").as("users");
-    cy.route({ method: "GET", url: "/users", response: "@users" }).as(
-      "getUsers"
-    );
+    cy.intercept("GET", "http://localhost:3004/api/users", {
+      fixture: "users.json",
+    }).as("getUsers");
     cy.visit("/");
     cy.wait("@getUsers");
     cy.login("Aude");

@@ -21,9 +21,7 @@ const SlotMachineApp = () => {
       setUser(existingUser);
     } else {
       const newUser: NewUser = { username: usernameInput };
-      createUser(newUser)
-        .then(setUser)
-        .catch((e) => setErrorMessage(ErrorMessage.USER_NOT_CREATED));
+      createUser(newUser);
     }
   };
 

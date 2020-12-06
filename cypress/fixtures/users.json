@@ -1,7 +1,12 @@
-[
-  {
-    "id": 1,
-    "username": "Aude",
-    "credit": 100
-  }
-]
+{
+  "data": [
+    {
+      "credit": 100,
+      "_id": "1",
+      "username": "Aude",
+      "createdAt": "2020-11-15T18:08:34.947Z",
+      "updatedAt": "2020-12-05T21:30:12.721Z",
+      "__v": 0
+    }
+  ]
+}
