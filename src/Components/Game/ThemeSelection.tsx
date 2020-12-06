@@ -1,11 +1,5 @@
 import React from "react";
-import sloth from "../../images/themes/sloth/green-ninja.png";
-import cat from "../../images/themes/cat/mexican-cat.jpg";
-import duck from "../../images/themes/duck/watermelon-duck.jpg";
-import george from "../../images/themes/george/happy-george.jpg";
-import iceAge from "../../images/themes/ice-age/scrat.png";
-import keanu from "../../images/themes/keanu/wicks-keanu.jpg";
-import southPark from "../../images/themes/south-park/cartman.png";
+import imageCollection from "../../Helpers/ImageCollection";
 
 interface ThemeSelectionProps {
   selectedTheme: string;
@@ -32,13 +26,13 @@ const ThemeSelection = ({
 
   return (
     <>
-      {renderTheme("sloth", sloth)}
-      {renderTheme("cat", cat)}
-      {renderTheme("duck", duck)}
-      {renderTheme("george", george)}
-      {renderTheme("ice-age", iceAge)}
-      {renderTheme("keanu", keanu)}
-      {renderTheme("south-park", southPark)}
+      {renderTheme("sloth", imageCollection.sloth[1])}
+      {renderTheme("cat", imageCollection.cat[1])}
+      {renderTheme("duck", imageCollection.duck[1])}
+      {renderTheme("george", imageCollection.george[1])}
+      {renderTheme("ice-age", imageCollection["ice-age"][1])}
+      {renderTheme("keanu", imageCollection.keanu[2])}
+      {renderTheme("south-park", imageCollection["south-park"][1])}
     </>
   );
 };
