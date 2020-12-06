@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { uniq } from "lodash";
-import { slothImageCollection } from "../Helpers/SlothImageCollection.data";
-import { updateUser } from "../Adapters/APIs";
-import BetOption from "./gameComponents/BetOption";
-import Leaderboard from "./gameComponents/Leaderboard";
-import SlotMachineImage from "./gameComponents/SlotMachineImage";
-import SpinButton from "./gameComponents/SpinButton";
-import ThemeSelection from "./gameComponents/ThemeSelection";
-import TopBanner from "./layout/TopBanner";
-import Image from "../Interfaces/Image";
-import { User } from "../Interfaces/User";
-import placeholderImage from "../images/game/question-mark.png";
+import { slothImageCollection } from "../../Helpers/SlothImageCollection.data";
+import { updateUser } from "../../Adapters/APIs";
+import BetOption from "./BetOption";
+import Leaderboard from "./Leaderboard";
+import SlotMachineImage from "./SlotMachineImage";
+import SpinButton from "./SpinButton";
+import ThemeSelection from "./ThemeSelection";
+import TopBanner from "../Layout/TopBanner";
+import Image from "../../Interfaces/Image";
+import { User } from "../../Interfaces/User";
+import placeholderImage from "../../images/game/question-mark.png";
 
 interface GameScreenProps {
   users: User[];
   user: User;
-  setUser: (user: User) => void;
+  setUser: (user?: User) => void;
 }
 
 const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
