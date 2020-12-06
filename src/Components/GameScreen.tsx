@@ -100,7 +100,7 @@ const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
         </div>
       </div>
       {user.credit <= 0 ? (
-        <div>You don't have enough credit to spin</div>
+        <div className="text">You don't have enough credit to spin</div>
       ) : (
         <SpinButton {...{ user, handleSpin }} />
       )}

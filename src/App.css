@@ -28,6 +28,13 @@ body {
   margin-right: auto;
 }
 
+.text {
+  font-size: 30px;
+  text-shadow: -1px 1px 0 #000000, 1px -1px 0 #000000, 1px -1px 0 #000000,
+    -1px -1px 0 #000000;
+  color: #fff;
+}
+
 button {
   margin: 0.3rem;
 }
@@ -145,10 +152,6 @@ select {
   text-shadow: -1px 1px 0 #000000, 1px 1px 0 #000000, 1px -1px 0 #000000,
     -1px -1px 0 #000000;
   color: #fff;
-}
-
-.text {
-  font-size: 30px;
 }
 
 .text-magical {
