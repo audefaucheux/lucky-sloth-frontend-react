@@ -40,7 +40,7 @@ const SlotMachineApp = () => {
   return (
     <>
       <div className="main">
-        {errorMessage && console.log(errorMessage)}
+        {errorMessage}
         {!user ? (
           <Login {...{ users, findUser }} />
         ) : (
