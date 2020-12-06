@@ -3,11 +3,19 @@
 h1 {
   font-family: "Ribeye", cursive;
   font-size: 4rem;
-  margin: 1rem;
+  padding: 1rem;
+  text-shadow: -1px 1px 0 #000000, 1px 4px 0 #000000, 1px -1px 0 #000000,
+    -1px -1px 0 #000000;
+  color: #fff;
 }
 
 body {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.main {
+  background-image: url("./images/game/tropical-forest.jpeg");
+  background-size: cover;
 }
 
 .sea-green {
@@ -27,8 +35,9 @@ button {
 /* LEADERBOARD  */
 
 table {
-  margin: 0 auto;
+  margin: auto;
   width: 33rem !important;
+  background-color: #fff;
 }
 
 /* LOGIN  */
@@ -133,6 +142,9 @@ select {
 #bet-header {
   font-size: 26px;
   margin: 0.3rem;
+  text-shadow: -1px 1px 0 #000000, 1px 1px 0 #000000, 1px -1px 0 #000000,
+    -1px -1px 0 #000000;
+  color: #fff;
 }
 
 .text {

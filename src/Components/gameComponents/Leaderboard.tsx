@@ -34,6 +34,7 @@ const Leaderboard = ({ users }: LeaderboardProps) => {
           ))}
         </tbody>
       </table>
+      <br />
     </div>
   );
 };

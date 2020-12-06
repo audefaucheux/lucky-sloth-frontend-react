@@ -33,12 +33,14 @@ const SlotMachineApp = () => {
 
   return (
     <>
-      {errorMessage && console.log(errorMessage)}
-      {user.username === "" ? (
-        <Login {...{ users, findUser }} />
-      ) : (
-        <GameScreen {...{ users, user, setUser }} />
-      )}
+      <div className="main">
+        {errorMessage && console.log(errorMessage)}
+        {user.username === "" ? (
+          <Login {...{ users, findUser }} />
+        ) : (
+          <GameScreen {...{ users, user, setUser }} />
+        )}
+      </div>
       <Footer />
     </>
   );
