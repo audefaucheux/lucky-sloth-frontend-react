@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { getServerUrl } from "../../Services/LuckySlothBackend";
 import { uniq } from "lodash";
 import imageCollection from "../../Helpers/ImageCollection";
-import { updateUser } from "../../Adapters/APIs";
 import BetOption from "./BetOption";
 import Leaderboard from "./Leaderboard";
 import SlotMachineImage from "./SlotMachineImage";
@@ -16,9 +17,15 @@ interface GameScreenProps {
   users: User[];
   user: User;
   setUser: (user?: User) => void;
+  setErrorMessage: (error?: string) => void;
 }
 
-const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
+const GameScreen = ({
+  users,
+  user,
+  setUser,
+  setErrorMessage,
+}: GameScreenProps) => {
   const imagePlaceholder: Image = {
     src: placeholderImage,
     className: "",
@@ -49,6 +56,15 @@ const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
     imageSetter({ src: imageUrl, className: "" });
   };
 
+  const updateUser = async (id: string, user: User): Promise<User | void> => {
+    try {
+      const response = await axios.patch(`${getServerUrl()}/users/${id}`, user);
+      setUser(response.data.data);
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+  };
+
   const getResult = (randomNumberArray: number[]) => {
     const uniqueNumberArray = uniq(randomNumberArray);
     if (uniqueNumberArray.length === 1) {
@@ -56,10 +72,10 @@ const GameScreen = ({ users, user, setUser }: GameScreenProps) => {
         ...user,
         credit: user.credit + bet * 5,
       };
-      updateUser(userUpdate._id, userUpdate).then(setUser);
+      updateUser(userUpdate._id, userUpdate);
     } else {
       const userUpdate = { ...user, credit: user.credit - bet };
-      updateUser(userUpdate._id, userUpdate).then(setUser);
+      updateUser(userUpdate._id, userUpdate);
     }
   };
 

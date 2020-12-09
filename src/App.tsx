@@ -63,7 +63,7 @@ const SlotMachineApp = () => {
         {!user ? (
           <Login {...{ users, findUser, errorMessage }} />
         ) : (
-          <GameScreen {...{ users, user, setUser }} />
+          <GameScreen {...{ users, user, setUser, setErrorMessage }} />
         )}
       </div>
       <Footer />
