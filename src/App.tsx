@@ -4,14 +4,8 @@ import GameScreen from "./Components/Game/GameScreen";
 import Login from "./Components/Login/Login";
 import Footer from "./Components/Layout/Footer";
 import ErrorMessage from "./Constants/ErrorMessage";
-import { User, NewUser } from "./Interfaces/User";
+import { User, NewUser } from "./Types/User";
 import "./App.css";
-
-const defaultUser = {
-  credit: 200,
-  _id: "5fb16ea25be58baad0986d0b",
-  username: "Aude",
-};
 
 const SlotMachineApp = () => {
   const [users, setUsers] = useState<User[]>([]);

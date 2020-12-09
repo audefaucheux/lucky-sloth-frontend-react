@@ -8,8 +8,8 @@ import SlotMachineImage from "./SlotMachineImage";
 import SpinButton from "./SpinButton";
 import ThemeSelection from "./ThemeSelection";
 import TopBanner from "../Layout/TopBanner";
-import Image from "../../Interfaces/Image";
-import { User } from "../../Interfaces/User";
+import Image from "../../Types/Image";
+import { User } from "../../Types/User";
 import placeholderImage from "../../images/game/question-mark.png";
 
 interface GameScreenProps {

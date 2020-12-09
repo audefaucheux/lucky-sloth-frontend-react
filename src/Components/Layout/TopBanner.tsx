@@ -1,6 +1,6 @@
 import React from "react";
 import SlothLogo from "../../images/game/sloth-logo.png";
-import { User } from "../../Interfaces/User";
+import { User } from "../../Types/User";
 
 interface TopBannerProps {
   user: User;

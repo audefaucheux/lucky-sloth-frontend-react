@@ -1,5 +1,5 @@
 import axios from "axios";
-import { User, NewUser } from "../Interfaces/User";
+import { User, NewUser } from "../Types/User";
 
 const server = process.env.REACT_APP_SERVER;
 
