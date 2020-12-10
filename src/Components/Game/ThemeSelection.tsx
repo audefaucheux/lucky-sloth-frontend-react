@@ -18,6 +18,7 @@ const ThemeSelection = ({
   const renderTheme = (theme: string, image: string) => (
     <img
       src={image}
+      id={`${theme}-theme`}
       alt={theme}
       className={`${isThemeSelected(theme)} image-circle`}
       onClick={() => handleThemeSelected(theme)}
