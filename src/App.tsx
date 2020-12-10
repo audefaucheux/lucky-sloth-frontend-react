@@ -8,15 +8,15 @@ import { User, NewUser } from "./Types/User";
 import "./App.css";
 import { getServerUrl } from "./Services/LuckySlothBackend";
 
-// const defaultUser = {
-//   credit: 200,
-//   _id: "5fb16ea25be58baad0986d0b",
-//   username: "Aude",
-// };
+const defaultUser = {
+  credit: 200,
+  _id: "5fb16ea25be58baad0986d0b",
+  username: "Aude",
+};
 
 const SlotMachineApp = () => {
   const [users, setUsers] = useState<User[]>([]);
-  const [user, setUser] = useState<User | undefined>();
+  const [user, setUser] = useState<User | undefined>(defaultUser);
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
   const getUsers = async () => {

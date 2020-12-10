@@ -1,5 +1,6 @@
 import React from "react";
 import imageCollection from "../../Helpers/ImageCollection";
+import "./styles/ThemeSelection.css";
 
 interface ThemeSelectionProps {
   selectedTheme: string;

@@ -1,0 +1,17 @@
+#bet-container {
+  display: flex;
+  justify-content: center;
+}
+
+#bet-amount-input {
+  width: 50px;
+  margin-right: 10px;
+}
+
+#bet-header {
+  font-size: 26px;
+  margin: 0.3rem;
+  text-shadow: -1px 1px 0 #000000, 1px 1px 0 #000000, 1px -1px 0 #000000,
+    -1px -1px 0 #000000;
+  color: #fff;
+}

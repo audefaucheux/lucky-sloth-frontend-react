@@ -1,0 +1,18 @@
+.error-message {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  position: relative;
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.error-message > button {
+  color: #f8d7da;
+  background-color: #842029;
+  border-color: #842029;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+}

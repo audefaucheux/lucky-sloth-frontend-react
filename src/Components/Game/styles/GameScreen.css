@@ -1,0 +1,17 @@
+#slot-machine {
+  padding: 56px 43px 66px 43px;
+  background-image: url("../../../images/game/redslotmachine2.png");
+  background-repeat: no-repeat;
+  background-size: 590px auto;
+  margin: 27px auto;
+  width: 590px;
+}
+
+#slot-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 243px;
+  padding: 2.5rem 0;
+}

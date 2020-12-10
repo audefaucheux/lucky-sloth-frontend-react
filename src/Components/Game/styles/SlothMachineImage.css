@@ -1,0 +1,8 @@
+.slot-images-size {
+  width: 33%;
+}
+
+.slot-images-size img {
+  max-height: 9rem;
+  max-width: 9rem;
+}

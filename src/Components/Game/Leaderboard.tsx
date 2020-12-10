@@ -1,5 +1,6 @@
 import React from "react";
 import { User } from "../../Types/User";
+import "./styles/Leaderboard.css";
 
 interface LeaderboardProps {
   users: User[];

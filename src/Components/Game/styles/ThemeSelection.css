@@ -1,0 +1,16 @@
+.image-circle {
+  padding: 0.5rem;
+  margin: 1rem;
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #000000;
+  background-color: #fff;
+}
+
+.selected-theme {
+  width: 6rem;
+  height: 6rem;
+  border: 6px solid lightseagreen;
+}

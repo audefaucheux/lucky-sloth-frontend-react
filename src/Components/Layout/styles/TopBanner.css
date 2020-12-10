@@ -1,0 +1,15 @@
+#top-banner {
+  display: flex;
+  width: 100%;
+  background-color: #20b2aa;
+  justify-content: space-between;
+}
+
+#current-user {
+  display: flex;
+  align-self: center;
+}
+
+#top-banner img {
+  height: 3.5rem;
+}

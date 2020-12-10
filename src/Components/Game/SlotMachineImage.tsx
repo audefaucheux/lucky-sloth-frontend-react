@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "../../Types/Image";
+import "./styles/SlothMachineImage.css";
 
 interface SlotMachineProps {
   image: Image;

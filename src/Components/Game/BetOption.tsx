@@ -1,5 +1,6 @@
 import React from "react";
 import { User } from "../../Types/User";
+import "./styles/BetOption.css";
 
 interface BetOptionProps {
   bet: number;
