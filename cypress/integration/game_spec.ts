@@ -33,11 +33,13 @@ describe("Game", () => {
   });
 
   it("should be set to Sloth theme by default", () => {
-    cy.get("select[id='theme-dropdown']").contains("Sloth");
+    cy.get("img[id='sloth-theme']").should("have.class", "selected-theme");
   });
 
   it("should allow user to choose theme", () => {
-    cy.get("select[id='theme-dropdown']").select("Cat");
+    cy.get("img[id='cat-theme']").should("not.have.class", "selected-theme");
+    cy.get("img[id='cat-theme']").click();
+    cy.get("img[id='cat-theme']").should("have.class", "selected-theme");
   });
 
   it("should display a leaderboard", () => {

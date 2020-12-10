@@ -1,5 +1,6 @@
 import React from "react";
 import imageCollection from "../../Helpers/ImageCollection";
+import "./styles/ThemeSelection.css";
 
 interface ThemeSelectionProps {
   selectedTheme: string;
@@ -18,6 +19,7 @@ const ThemeSelection = ({
   const renderTheme = (theme: string, image: string) => (
     <img
       src={image}
+      id={`${theme}-theme`}
       alt={theme}
       className={`${isThemeSelected(theme)} image-circle`}
       onClick={() => handleThemeSelected(theme)}

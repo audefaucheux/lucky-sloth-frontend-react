@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/SpinButton.css";
 
 interface SpinButtonProps {
   handleSpin: () => void;

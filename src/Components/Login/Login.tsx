@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { User } from "../../Interfaces/User";
+import { User } from "../../Types/User";
+import "./styles/Login.css";
 
 interface LoginProps {
   users: User[];

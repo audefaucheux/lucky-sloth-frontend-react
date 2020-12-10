@@ -1,0 +1,15 @@
+#login-content {
+  min-height: 45rem;
+}
+
+.form-container {
+  display: flex;
+  padding: 3rem 0;
+  flex-direction: column;
+}
+
+.form-container-items {
+  margin-top: 1rem;
+  border-radius: 6px;
+  align-self: center;
+}

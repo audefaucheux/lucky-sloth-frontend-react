@@ -1,0 +1,11 @@
+#stop-logo {
+  background-image: url("../../../images/game/Whenthefunstopsstop-color.jpg");
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+#stop-logo img {
+  height: 6rem;
+  align-self: center;
+}

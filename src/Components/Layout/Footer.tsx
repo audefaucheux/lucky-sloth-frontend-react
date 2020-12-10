@@ -1,5 +1,6 @@
 import React from "react";
 import funStopsLogo from "../../images/game/when-the-fun-stops-stop.jpg";
+import "./styles/Footer.css";
 
 const Footer = () => {
   return (
